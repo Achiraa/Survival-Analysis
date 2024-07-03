@@ -73,7 +73,12 @@ ggsurvplot(data_s2, data = sfile, surv.median.line = 'hv', pval = TRUE, conf.int
 Survival Data with Additional Columns: survivaladd.csv
 Kaplan-Meier Curves:
 a.By Cancer Subtypes
-b.By Gender
-c.By Race
+b.By Race
+
+![Survive1](https://github.com/Achiraa/Survival-Analysis/assets/114616203/74c36253-81f1-49e3-91b3-cec0b7233c60)
+
+![Survive2](https://github.com/Achiraa/Survival-Analysis/assets/114616203/ceff1bfe-2ded-4940-a6d5-c8b33e57471a)
+
+
 
 ## This analysis performs survival analysis on cancer patients using the Kaplan-Meier method. It includes survival curves based on different cancer subtypes, gender, and race. The data is read from a CSV file, processed to convert days to years, and Kaplan-Meier plots are generated for visualization.

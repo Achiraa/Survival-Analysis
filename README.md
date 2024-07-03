@@ -33,6 +33,7 @@ dim(sfile)
 write.csv(sfile, file = "survivaladd.csv")
 head(sfile)
 View(sfile)
+
 ## 4. Set Row Names
 
 sr = sfile[,-1]
@@ -40,6 +41,7 @@ rownames(sr) = make.names(sfile[,1], unique = TRUE)
 View(sr)
 head(sr)
 sum(is.na(sr['OS']))
+
 ## 5. Kaplan-Meier Curve by Cancer Subtypes
 
 data_s = survfit(Surv(as.numeric(OS), as.numeric(VS)) ~ Cancer.Subtypes, data = sfile)
@@ -52,6 +54,7 @@ ggsurvplot(data_s, data = sfile, surv.median.line = 'hv', pval = TRUE, conf.int 
 ## 6. Kaplan-Meier Curve by Gender
 
 data_s1 = survfit(Surv(as.numeric(OS), as.numeric(VS)) ~ gender, data = sfile)
+
 data_s1
 
 ggsurvplot(data_s1, data = sfile, surv.median.line = 'hv', pval = TRUE, conf.int = FALSE,
@@ -71,8 +74,11 @@ ggsurvplot(data_s2, data = sfile, surv.median.line = 'hv', pval = TRUE, conf.int
            
 ## Output
 Survival Data with Additional Columns: survivaladd.csv
+
 Kaplan-Meier Curves:
+
 a.By Cancer Subtypes
+
 b.By Race
 
 ![Survive1](https://github.com/Achiraa/Survival-Analysis/assets/114616203/74c36253-81f1-49e3-91b3-cec0b7233c60)
